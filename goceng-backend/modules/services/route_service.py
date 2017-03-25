@@ -38,6 +38,8 @@ class RouteService(object):
       route['jam_meter'] = sum([e['jam_meter'] for e in legs]) / float(len(legs))
       routes += [route]
     result['routes'] = routes
+    del result['geocoded_waypoints']
+    del result['status']
     return result
 
   @staticmethod

@@ -19,20 +19,16 @@ class RouteServiceTests(unittest.TestCase):
     # events = read_json('tests/fixtures/bandung-2200.event.json')
     # total_events = EventService.get_events_by_area(area='bandung')
     # res = RouteService.preprocess(raw=raw, events=events, total_events=total_events)
+    # print_json(res)
     # # ===
     # self.assertTrue(type(res) is dict)
     # self.assertTrue('routes' in res)
-    # self.assertTrue('status' in res)
-    # self.assertTrue('geocoded_waypoints' in res)
     # # ===
     # self.assertTrue(type(res['routes']) is list)
     # self.assertTrue(type(res['routes'][0]) is dict)
     # self.assertTrue('bounds' in res['routes'][0])
-    # self.assertTrue('copyrights' in res['routes'][0])
     # self.assertTrue('legs' in res['routes'][0])
-    # self.assertTrue('overview_polyline' in res['routes'][0])
     # self.assertTrue('summary' in res['routes'][0])
-    # self.assertTrue('warnings' in res['routes'][0])
     # self.assertTrue('waypoint_order' in res['routes'][0])
     pass
  
