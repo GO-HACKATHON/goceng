@@ -25,5 +25,9 @@ def get_events_by_area():
 def get_route():
   return RouteHandler.get_route(endpoint='/v1/route')
 
+@app.route("/v1/multiple_route")
+def get_multiple_route():
+  return RouteHandler.get_multiple_route(endpoint='/v1/multiple_route')
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=Config.PORT)

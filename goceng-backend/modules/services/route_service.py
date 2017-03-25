@@ -4,7 +4,7 @@ import urllib
 import numpy as np
 
 from config import Config
-from modules.helper import print_json, read_json, flatten, uniq, datetime_from_str, datetime_floor_hour, current_date
+from modules.helper import print_json, read_json, flatten, uniq, datetime_from_str, datetime_floor_hour, current_date, get_ranged_timestamps
 from modules.objects.route import Route
 from modules.services.event_service import EventService
 
@@ -49,6 +49,20 @@ class RouteService(object):
     current_events = EventService.get_events_by_area(area=area, timestamp='now')
     total_events = EventService.get_events_by_area(area=area)
     result = RouteService.preprocess(raw_result, events=current_events, total_events=total_events)
+    return result
+
+  @staticmethod
+  def get_multiple_route (origin, destination, timestamp, waypoints=None, area='bandung'):
+    url = RouteService.URL % (origin, destination, Config.GMAPS_API_KEY)
+    if waypoints is not None:
+      url += ('&waypoints=' + waypoints)
+    raw_result = RouteService.url_get(url)
+    timestamps = get_ranged_timestamps(timestamp)
+    result = []
+    for timestamp in timestamps:
+      current_events = EventService.get_events_by_area(area=area, timestamp=timestamp)
+      total_events = EventService.get_events_by_area(area=area)
+      result += [RouteService.preprocess(raw_result, events=current_events, total_events=total_events)]
     return result
 
   @staticmethod

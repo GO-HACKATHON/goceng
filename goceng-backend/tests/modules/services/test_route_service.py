@@ -43,6 +43,13 @@ class RouteServiceTests(unittest.TestCase):
     # print_json(res)
     pass
  
+  def testGetMultipleRoute(self):
+    # origin = 'Universitas Kristen Maranatha, Sukawarna, Jawa Barat, West Java'
+    # destination = 'Rumah Sakit Melinda 2, Pasirkaliki, Bandung City, West Java'
+    # timestamp = '2017-03-25 22:10:00'
+    # res = RouteService.get_multiple_route(origin, destination, timestamp)
+    pass
+ 
   def testJamPerStep(self):
     route = read_json('tests/fixtures/ss-rsmelinda.route.json')
     events = read_json('tests/fixtures/bandung-2200.event.json')

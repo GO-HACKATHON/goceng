@@ -19,3 +19,18 @@ class RouteHandler (object):
       return response
     except Exception as exception:
       return handle_error(endpoint=endpoint, e=exception)
+
+  @staticmethod
+  def get_multiple_route (endpoint=None):
+    try:
+      origin = request.args.get('origin')
+      destination = request.args.get('destination')
+      timestamp = request.args.get('timestamp')
+      waypoints = request.args.get('waypoints', None)
+      area = request.args.get('area', 'bandung')
+      message = RouteService.get_multiple_route(origin=origin, destination=destination, timestamp=timestamp, waypoints=waypoints, area=area)
+      response = jsonify(message)
+      response.status_code = 200
+      return response
+    except Exception as exception:
+      return handle_error(endpoint=endpoint, e=exception)
