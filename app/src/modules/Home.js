@@ -12,23 +12,20 @@ export default React.createClass({
         width: '100%',
         height: '100%'
       }}>
-        <Card style={{
-            background:'white',
+        <div style={{
             position: 'absolute',
-            width: '100%',
+            width: '96%',
+            top: 7,
+            left: '50%',
+            marginLeft: '-48%',
             zIndex: 999
           }}>
-          <MaterialSearchBar floatingLabelText="Origin"
-            hintText="Pickup location"/>
-          <MaterialSearchBar floatingLabelText="Destination"
-            hintText="Where to go"/>
-        </Card>
+          <Card>
+            <MaterialSearchBar floatingLabelText="Your Pickup Location"/>
+            <MaterialSearchBar floatingLabelText="Your Destination"/>
+          </Card>
+        </div>
         <GocengMap/>
-        <DetailCard style={{
-          position: 'absolute',
-          width: '100%',
-          bottom: 0
-        }}/>
       </div>
     )
   }
