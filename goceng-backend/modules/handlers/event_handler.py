@@ -12,7 +12,8 @@ class EventHandler (object):
       area = request.args.get('area')
       timestamp = request.args.get('timestamp')
       message = EventService.get_events_by_area(area=area, timestamp=timestamp)
-      res_json = json.dumps(message)
-      return res_json
+      response = jsonify(message)
+      response.status_code = 200
+      return response
     except Exception as exception:
       return handle_error(endpoint=endpoint, e=exception)
