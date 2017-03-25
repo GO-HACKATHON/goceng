@@ -102,7 +102,7 @@ class RouteService(object):
     jps = RouteService.jam_per_step(step, events)
     total_jps = RouteService.total_jam_per_step(step, total_events)
     pos = [e for e in total_jps if e>= jps]
-    res = len(pos) / float(len(total_jps))
+    res = (len(total_jps) - len(pos)) / float(len(total_jps))
     return res
 
   @staticmethod
