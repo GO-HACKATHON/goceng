@@ -1,5 +1,8 @@
 import json
 
+from copy import deepcopy
+from datetime import datetime
+
 def read_json (path):
   rows = []
   with open(path, 'rb') as filedata:
@@ -18,6 +21,10 @@ def flatten (arr):
 
 def uniq (arr):
   return list(set(arr))
+
+def datetime_from_str (string):
+  frmt = '%Y-%m-%d %H:%M:%S'
+  return datetime.strptime(string, frmt)
 
 def datetime_floor_hour (datetime_obj):
   result = deepcopy(datetime_obj)
