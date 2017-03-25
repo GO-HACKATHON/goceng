@@ -8,6 +8,11 @@ class Route (object):
   def __init__ (self, args):
     self.bounds = args['bounds']
     self.legs = args['legs']
+    self.overview_polyline = args['overview_polyline']
+    self.summary = args['summary']
+    self.warnings = args['warnings']
+    self.waypoint_order = args['waypoint_order']
+    self.copyrights = args['copyrights']
     self.total_distance = self._total_distance()
     self.total_duration = self._total_duration()
 
