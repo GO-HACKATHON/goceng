@@ -36,6 +36,12 @@ module.exports = {
 
   context: path.join(__dirname, 'src'),
 
+  resolve: {
+    alias: {
+      config: path.join(__dirname, 'config/credentials', process.env.NODE_ENV)
+    }
+  },
+
   plugins: [
     new ExtractTextPlugin("[name].css"),
     new HtmlWebpackPlugin({
