@@ -1,32 +1,33 @@
 import React from 'react'
 import GocengMap from './GocengMap'
-import SearchBar from './SearchBar'
+import MaterialSearchBar from './MaterialSearchBar'
+import {Card} from 'material-ui/Card'
 
 export default React.createClass({
   render() {
     return (
-      <div style={{
+      <Card style={{
         position: 'relative',
         width: '100%',
         height: '100%'
       }}>
-        <SearchBar placeholder="Origin"
-          style={{
+        <div style={{
+            background:'white',
             position: 'absolute',
-            left: '50%',
-            marginLeft: -125,
-            zIndex: 999
-          }}/>
-        <SearchBar placeholder="Destination"
-          style={{
-            position: 'absolute',
-            left: '50%',
-            marginLeft: -125,
-            marginTop: 35,
-            zIndex: 999
-          }}/>
+            paddingLeft: 10,
+            paddingRight: 10,
+            paddingBottom: 0,
+            paddingTop: 10,
+            width: '100%',
+            zIndex: 9999
+          }}>
+          <MaterialSearchBar floatingLabelText="Origin"
+            hintText="Pickup location"/>
+          <MaterialSearchBar floatingLabelText="Destination"
+            hintText="Where to go"/>
+          </div>
         <GocengMap/>
-      </div>
+      </Card>
     )
   }
 })
