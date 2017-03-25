@@ -16,8 +16,8 @@ class GocengMap extends Component {
 }
 
 GocengMap.defaultProps = {
-    center: {lat: 59.95, lng: 30.33},
-    zoom: 11
+    center: {lat: -6.89148, lng: 107.608465},
+    zoom: 15.5
 }
 
 export default GocengMap
