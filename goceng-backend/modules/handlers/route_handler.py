@@ -11,7 +11,8 @@ class RouteHandler (object):
     try:
       origin = request.args.get('origin')
       destination = request.args.get('destination')
-      message = RouteService.get_route(origin=origin, destination=destination)
+      area = request.args.get('area', 'bandung')
+      message = RouteService.get_route(origin=origin, destination=destination, area=area)
       response = jsonify(message)
       response.status_code = 200
       return response
