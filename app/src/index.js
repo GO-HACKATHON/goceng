@@ -6,6 +6,7 @@ import '../node_modules/font-awesome/css/font-awesome.css'
 import '../node_modules/react-bootstrap-typeahead/css/Token.css'
 import '../node_modules/react-bootstrap-typeahead/css/Typeahead.css'
 import '../node_modules/leaflet/dist/leaflet.css'
+import '../node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css'
 import './style.css'
 
 render((
