@@ -1,0 +1,590 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJg7HJZ1fmaC4RYXnj3NzjeCQ",
+            "types": [
+                "establishment",
+                "point_of_interest",
+                "university"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJORjPhkXmaC4RaPHlHcZhK4g",
+            "types": [
+                "establishment",
+                "food",
+                "point_of_interest",
+                "restaurant"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJFROP1kbmaC4RJOzyO0MeGIc",
+            "types": [
+                "establishment",
+                "lodging",
+                "point_of_interest"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJOQRB-c3naC4RskJSO-o7Xtc",
+            "types": [
+                "establishment",
+                "point_of_interest",
+                "shopping_mall"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": -6.8931539,
+                    "lng": 107.6104475
+                },
+                "southwest": {
+                    "lat": -6.9082645,
+                    "lng": 107.6042508
+                }
+            },
+            "copyrights": "Map data ©2017 Google",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "1.0 km",
+                        "value": 1027
+                    },
+                    "duration": {
+                        "text": "4 mins",
+                        "value": 261
+                    },
+                    "end_address": "Jl. Taman Sari No.54, Tamansari, Bandung Wetan, Tamansari, Bandung Wetan, Kota Bandung, Jawa Barat 40116, Indonesia",
+                    "end_location": {
+                        "lat": -6.9002608,
+                        "lng": 107.6093713
+                    },
+                    "start_address": "Jl. Ganesha No.10, Lb. Siliwangi, Coblong, Kota Bandung, Jawa Barat 40132, Indonesia",
+                    "start_location": {
+                        "lat": -6.8931539,
+                        "lng": 107.6104449
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "8 m",
+                                "value": 8
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 3
+                            },
+                            "end_location": {
+                                "lat": -6.8932271,
+                                "lng": 107.6104475
+                            },
+                            "html_instructions": "Head <b>south</b> on <b>Jl. A ITB</b> toward <b>Jl. Ganeca</b>",
+                            "polyline": {
+                                "points": "diai@gtxoSNA"
+                            },
+                            "start_location": {
+                                "lat": -6.8931539,
+                                "lng": 107.6104449
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 235
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 64
+                            },
+                            "end_location": {
+                                "lat": -6.8938862,
+                                "lng": 107.6084472
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Jl. Ganeca</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "tiai@itxoS@^?JDl@DT@RBLNn@Tx@d@nABJ^v@"
+                            },
+                            "start_location": {
+                                "lat": -6.8932271,
+                                "lng": 107.6104475
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.7 km",
+                                "value": 654
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 159
+                            },
+                            "end_location": {
+                                "lat": -6.8993324,
+                                "lng": 107.6094575
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Jl. Taman Sari</b><div style=\"font-size:0.9em\">Pass by Bank BRI KCP ITB bandung (on the right)</div>",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "xmai@ygxoS\\@N?RAJ?`@M`@QZMNIFKPKb@YrAu@l@Wz@WnBc@`@Et@@hA@b@Dd@D`@Dr@J^Hb@L`@LPDF@H@F@J?HAJCHEFELQ"
+                            },
+                            "start_location": {
+                                "lat": -6.8938862,
+                                "lng": 107.6084472
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 130
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 35
+                            },
+                            "end_location": {
+                                "lat": -6.9002608,
+                                "lng": 107.6093713
+                            },
+                            "html_instructions": "At the roundabout, take the <b>2nd</b> exit and stay on <b>Jl. Taman Sari</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                            "maneuver": "roundabout-left",
+                            "polyline": {
+                                "points": "xobi@cnxoS?AA??A?A?A?A?A?A?A?A@??A@A?A@??A@??A@?@??A@?@?@?@?@?@?@?@@@?@@@@@??@?@@??@?@@??@?@?@?@?@A??@?@VDnAHl@B"
+                            },
+                            "start_location": {
+                                "lat": -6.8993324,
+                                "lng": 107.6094575
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                },
+                {
+                    "distance": {
+                        "text": "2.5 km",
+                        "value": 2524
+                    },
+                    "duration": {
+                        "text": "6 mins",
+                        "value": 383
+                    },
+                    "end_address": "Jl. Cihampelas No.23-25, Tamansari, Bandung Wetan, Kota Bandung, Jawa Barat 40171, Indonesia",
+                    "end_location": {
+                        "lat": -6.9052991,
+                        "lng": 107.6043887
+                    },
+                    "start_address": "Jl. Taman Sari No.54, Tamansari, Bandung Wetan, Tamansari, Bandung Wetan, Kota Bandung, Jawa Barat 40116, Indonesia",
+                    "start_location": {
+                        "lat": -6.9002608,
+                        "lng": 107.6093713
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "84 m",
+                                "value": 84
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 18
+                            },
+                            "end_location": {
+                                "lat": -6.8995114,
+                                "lng": 107.6094747
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>Jl. Taman Sari</b>",
+                            "polyline": {
+                                "points": "rubi@qmxoSm@CoAIWE"
+                            },
+                            "start_location": {
+                                "lat": -6.9002608,
+                                "lng": 107.6093713
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 115
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 41
+                            },
+                            "end_location": {
+                                "lat": -6.8986082,
+                                "lng": 107.6094139
+                            },
+                            "html_instructions": "At the roundabout, take the <b>2nd</b> exit and stay on <b>Jl. Taman Sari</b><div style=\"font-size:0.9em\">Pass by Balubur Town Square (on the left)</div>",
+                            "maneuver": "roundabout-left",
+                            "polyline": {
+                                "points": "|pbi@enxoS?@A??@A??@A@A??@A?A??@A?A?A?A?A?A??AA?A?A??AA??AA??AAAMPGDIDKBI@K?GAIAGAQEa@M"
+                            },
+                            "start_location": {
+                                "lat": -6.8995114,
+                                "lng": 107.6094747
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 236
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 35
+                            },
+                            "end_location": {
+                                "lat": -6.8986476,
+                                "lng": 107.6076097
+                            },
+                            "html_instructions": "Slight <b>left</b> onto the ramp to <b>Cihampelas</b>/<b>Bandara</b>/<b>Pasteur</b>/<b>Jakarta</b>",
+                            "polyline": {
+                                "points": "hkbi@ymxoSU@M@G@E@EBCBCBCBCDADCH@Z?TBZDXDR@D@LBNBJ@FHVL^HVFRJ`@"
+                            },
+                            "start_location": {
+                                "lat": -6.8986082,
+                                "lng": 107.6094139
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 199
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 18
+                            },
+                            "end_location": {
+                                "lat": -6.899496099999999,
+                                "lng": 107.6060237
+                            },
+                            "html_instructions": "Merge onto <b>Jl. Layang Pasupati</b>",
+                            "maneuver": "merge",
+                            "polyline": {
+                                "points": "pkbi@qbxoSRf@P^HPr@bBdA~B"
+                            },
+                            "start_location": {
+                                "lat": -6.8986476,
+                                "lng": 107.6076097
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 188
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 24
+                            },
+                            "end_location": {
+                                "lat": -6.900303099999999,
+                                "lng": 107.604542
+                            },
+                            "html_instructions": "Take the exit toward <b>Cihampelas</b>/<b>Balai Kota/Cicendo</b>/<b>Sukajadi/Lembang</b>",
+                            "maneuver": "ramp-left",
+                            "polyline": {
+                                "points": "zpbi@sxwoSNNFHx@dBZp@Vr@X`A"
+                            },
+                            "start_location": {
+                                "lat": -6.899496099999999,
+                                "lng": 107.6060237
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 455
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 71
+                            },
+                            "end_location": {
+                                "lat": -6.9043106,
+                                "lng": 107.6043441
+                            },
+                            "html_instructions": "Keep <b>left</b> at the fork, follow signs for <b>Wastukencana</b>/<b>Cicendo</b>/<b>Pajajaran</b>/<b>Balai Kota</b>/<b>St. KA</b> and merge onto <b>Jl. Cihampelas</b><div style=\"font-size:0.9em\">Pass by Indomaret (on the left)</div>",
+                            "maneuver": "fork-left",
+                            "polyline": {
+                                "points": "zubi@kowoSZVLHLFRDp@HtBGn@AfBAnBAbGA`@A"
+                            },
+                            "start_location": {
+                                "lat": -6.900303099999999,
+                                "lng": 107.604542
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "79 m",
+                                "value": 79
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 14
+                            },
+                            "end_location": {
+                                "lat": -6.9042604,
+                                "lng": 107.6049942
+                            },
+                            "html_instructions": "At the roundabout, take the <b>1st</b> exit onto <b>Jl. Wastukencana</b>",
+                            "maneuver": "roundabout-left",
+                            "polyline": {
+                                "points": "|nci@cnwoS?A?A?A@??A?A@??A?A@??A@?@??A@?@?@?Ec@Ga@AAIg@"
+                            },
+                            "start_location": {
+                                "lat": -6.9043106,
+                                "lng": 107.6043441
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.6 km",
+                                "value": 618
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 90
+                            },
+                            "end_location": {
+                                "lat": -6.907604099999999,
+                                "lng": 107.6073353
+                            },
+                            "html_instructions": "Continue straight past Sekolah Tinggi Desain Indonesia to stay on <b>Jl. Wastukencana</b><div style=\"font-size:0.9em\">Pass by the church (on the left)</div>",
+                            "maneuver": "straight",
+                            "polyline": {
+                                "points": "rnci@erwoSOg@IQEIAGCK?KAMAYB_@Hc@Je@La@HSTa@\\c@LOBEPSJMPOx@i@`@M`@KLC`@Gx@Kd@I~@A`DVVBLBFBB@@@?@@@?@?B?@ABADCL"
+                            },
+                            "start_location": {
+                                "lat": -6.9042604,
+                                "lng": 107.6049942
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.3 km",
+                                "value": 320
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 40
+                            },
+                            "end_location": {
+                                "lat": -6.907108699999999,
+                                "lng": 107.6045274
+                            },
+                            "html_instructions": "Continue onto <b>Jl. Pajajaran</b><div style=\"font-size:0.9em\">Pass by Little Rabbit Kids Store (on the right)</div>",
+                            "polyline": {
+                                "points": "ncdi@{`xoSGN?@i@jAOf@Kb@C\\Cf@C|AA|A?BE`C"
+                            },
+                            "start_location": {
+                                "lat": -6.907604099999999,
+                                "lng": 107.6073353
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 230
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 32
+                            },
+                            "end_location": {
+                                "lat": -6.9052991,
+                                "lng": 107.6043887
+                            },
+                            "html_instructions": "At the roundabout, take the <b>2nd</b> exit onto <b>Jl. Cihampelas</b><div style=\"font-size:0.9em\">Pass by Sekolah Tinggi Hukum Bandung (on the right)</div><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                            "maneuver": "roundabout-left",
+                            "polyline": {
+                                "points": "l`di@iowoS@?@??@@?@??@@??@@??@?@@??@?@?@A??@?@A??@A??@A?A??@A?A?A?A??AA?A??AA??AA??A?AA??A?AaA@qDHa@BeA?"
+                            },
+                            "start_location": {
+                                "lat": -6.907108699999999,
+                                "lng": 107.6045274
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                },
+                {
+                    "distance": {
+                        "text": "1.0 km",
+                        "value": 1017
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 191
+                    },
+                    "end_address": "Jalan Purnawarman No. 13-15, Babakan Ciamis, Sumur Bandung, Babakan Ciamis, Sumur Bandung, Kota Bandung, Jawa Barat 40117, Indonesia",
+                    "end_location": {
+                        "lat": -6.9082645,
+                        "lng": 107.609357
+                    },
+                    "start_address": "Jl. Cihampelas No.23-25, Tamansari, Bandung Wetan, Kota Bandung, Jawa Barat 40171, Indonesia",
+                    "start_location": {
+                        "lat": -6.9052991,
+                        "lng": 107.6043887
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "93 m",
+                                "value": 93
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 13
+                            },
+                            "end_location": {
+                                "lat": -6.9044617,
+                                "lng": 107.6043567
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>Jl. Cihampelas</b><div style=\"font-size:0.9em\">Pass by Circle K (on the right)</div>",
+                            "polyline": {
+                                "points": "buci@mnwoScA@k@@w@@"
+                            },
+                            "start_location": {
+                                "lat": -6.9052991,
+                                "lng": 107.6043887
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 108
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 17
+                            },
+                            "end_location": {
+                                "lat": -6.9042604,
+                                "lng": 107.6049942
+                            },
+                            "html_instructions": "At the roundabout, take the <b>2nd</b> exit onto <b>Jl. Wastukencana</b>",
+                            "maneuver": "roundabout-left",
+                            "polyline": {
+                                "points": "zoci@gnwoS?@@@?@A??@?@?@A??@A??@A?A??@A?A?A?A?A?A?AAA?AAAA?A?AA??A?A?A?A?A@??A?A@??A?A@??A@?@??A@?@?@?Ec@Ga@AAIg@"
+                            },
+                            "start_location": {
+                                "lat": -6.9044617,
+                                "lng": 107.6043567
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 491
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 81
+                            },
+                            "end_location": {
+                                "lat": -6.906517699999999,
+                                "lng": 107.6079207
+                            },
+                            "html_instructions": "Slight <b>left</b> after Sekolah Tinggi Desain Indonesia (on the left)<div style=\"font-size:0.9em\">Pass by Hotel California Bandung (on the left)</div>",
+                            "maneuver": "turn-slight-left",
+                            "polyline": {
+                                "points": "rnci@erwoS[]EIGOCKEWE]De@He@Lm@La@Ti@LUT_@PSFI^c@LMPOXOLI`AYr@S~@In@In@W"
+                            },
+                            "start_location": {
+                                "lat": -6.9042604,
+                                "lng": 107.6049942
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 160
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 29
+                            },
+                            "end_location": {
+                                "lat": -6.9067852,
+                                "lng": 107.6093417
+                            },
+                            "html_instructions": "<b>Jl. Wastukencana</b> turns <b>left</b> and becomes <b>Jl. L. L. R.E. Martadinata</b>",
+                            "polyline": {
+                                "points": "v|ci@odxoSPuA@KP_BNyA"
+                            },
+                            "start_location": {
+                                "lat": -6.906517699999999,
+                                "lng": 107.6079207
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 165
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 51
+                            },
+                            "end_location": {
+                                "lat": -6.9082645,
+                                "lng": 107.609357
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Jl. Purnawarman</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "l~ci@kmxoShCAzCA"
+                            },
+                            "start_location": {
+                                "lat": -6.9067852,
+                                "lng": 107.6093417
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "diai@gtxoSNA@^Dx@Fh@R|@z@hCb@bAl@@^AbA_@j@WXWvBoAl@Wz@WnBc@`@E~BBhAJtAPbAVdAVR@TEPKLQAC?C?EFKLCJDDJAFVF|BL}BMWEABA@EBM@KIUVUHg@AYGa@MU@UBKDOPEN@p@PnAJp@h@bBJ`@Rf@Zp@xBbFVXtAvCp@tBh@`@`@Lp@HtBGvCCrJC`@C?CBEBCBAB?MeAKi@Yy@GQCWCg@LcAXgA^u@`AmA\\]x@i@`@Mn@OzASd@I~@AxDZZJ@HCJK\\i@lA[jAGdAK`I@?@?BBDHEFIBGECC?CaA@sELiC@cBD@BADIDOCCIDMBCB?Cc@Ic@Ig@[]MYIc@E]De@VsAb@kAb@u@fAoAj@_@LI`AYr@S~@In@In@WRaB`@yDdHC"
+            },
+            "summary": "Jl. Taman Sari",
+            "warnings": [],
+            "waypoint_order": [
+                0,
+                1
+            ]
+        }
+    ],
+    "status": "OK"
+}
