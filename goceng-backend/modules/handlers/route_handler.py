@@ -27,8 +27,10 @@ class RouteHandler (object):
       destination = request.args.get('destination')
       timestamp = request.args.get('timestamp')
       waypoints = request.args.get('waypoints', None)
+      intersections = request.args.get('intersections', False)
+      intersections = intersections != False
       area = request.args.get('area', 'bandung')
-      message = RouteService.get_multiple_route(origin=origin, destination=destination, timestamp=timestamp, waypoints=waypoints, area=area)
+      message = RouteService.get_multiple_route(origin=origin, destination=destination, timestamp=timestamp, waypoints=waypoints, area=area, intersections=intersections)
       response = jsonify(message)
       response.status_code = 200
       return response
