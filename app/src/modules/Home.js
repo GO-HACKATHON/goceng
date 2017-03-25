@@ -6,18 +6,14 @@ import {Card} from 'material-ui/Card'
 export default React.createClass({
   render() {
     return (
-      <Card style={{
+      <div style={{
         position: 'relative',
         width: '100%',
         height: '100%'
       }}>
-        <div style={{
+        <Card style={{
             background:'white',
             position: 'absolute',
-            paddingLeft: 10,
-            paddingRight: 10,
-            paddingBottom: 0,
-            paddingTop: 10,
             width: '100%',
             zIndex: 9999
           }}>
@@ -25,9 +21,9 @@ export default React.createClass({
             hintText="Pickup location"/>
           <MaterialSearchBar floatingLabelText="Destination"
             hintText="Where to go"/>
-          </div>
+        </Card>
         <GocengMap/>
-      </Card>
+      </div>
     )
   }
 })
