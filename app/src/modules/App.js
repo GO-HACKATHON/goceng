@@ -8,9 +8,7 @@ export default React.createClass({
     return (
       <div className="main-container">
         <div className="container">
-          <br/><br/>
           {this.props.children}
-          <br/><br/>
         </div>
       </div>
     )
