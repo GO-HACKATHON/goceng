@@ -59,3 +59,13 @@ code {
 .cursor-pointer {
   cursor: pointer;
 }
+
+/* Map CSS
+-------------------------------------------------- */
+.leaflet-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

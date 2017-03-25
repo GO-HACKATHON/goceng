@@ -18,7 +18,6 @@ export default React.createClass({
         <div id="navbar" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
             <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
-            <li><NavLink to="/maps">Maps</NavLink></li>
           </ul>
         </div>
       </div>
