@@ -32,8 +32,10 @@ class RouteService(object):
           step['jam_meter'] = RouteService.jam_meter_per_step(step, events, total_events)
           steps += [step]
         leg['steps'] = steps
+        leg['jam_meter'] = sum([e['jam_meter'] for e in steps]) / float(len(steps))
         legs += [leg]
       route['legs'] = legs
+      route['jam_meter'] = sum([e['jam_meter'] for e in legs]) / float(len(legs))
       routes += [route]
     result['routes'] = routes
     return result
