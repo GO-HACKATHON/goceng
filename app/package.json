@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node server.js & webpack-dev-server --progress --color",
+    "dev": "NODE_ENV=development node server.js & webpack-dev-server --progress --color --content-base src --hot --inline",
     "start": "npm run build && node server.js",
     "build": "webpack --progress --colors"
   },
