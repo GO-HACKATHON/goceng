@@ -16,6 +16,7 @@
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.6.3",
     "google-map-react": "^0.23.0",
+    "google-maps-react": "^1.0.19",
     "jquery": "^3.0.0",
     "react": "^0.14.7",
     "react-bootstrap-typeahead": "^0.5.3",

@@ -4,6 +4,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import App from './modules/App'
 import Home from './modules/Home'
 import GocengMap from './modules/GocengMap'
+import GocengMapReact from './modules/GocengMapReact'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/font-awesome/css/font-awesome.css'
 import '../node_modules/react-bootstrap-typeahead/css/Token.css'
@@ -14,7 +15,7 @@ render((
   <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
-        <Route path="/maps" component={GocengMap}/>
+        <Route path="/maps" component={GocengMapReact}/>
       </Route>
   </Router>
 ), document.getElementById('app'))
