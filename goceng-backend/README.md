@@ -1,6 +1,4 @@
-# flask-backend-boilerplate
-
-Boilerplate for building backend in flask.
+# smart-route-backend
 
 ## Install dependencies
 
@@ -13,6 +11,11 @@ pip install -r requirements.txt
 ## Run
 
 ```sh
+PORT=... \
+MONGO_HOST=... \
+MONGO_PORT=... \
+MONGO_DB=... \
+KEY=<gmap_key> \
 python application.py
 ```
 

@@ -1,4 +1,5 @@
 dist/
+public/
 config/credentials/*.js
 
 # Logs

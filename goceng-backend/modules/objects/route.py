@@ -7,12 +7,9 @@ class Route (object):
 
   def __init__ (self, args):
     self.bounds = args['bounds']
-    self.legs = args['legs']
-    self.overview_polyline = args['overview_polyline']
+    self.legs = [self._process_leg(leg) for leg in args['legs']]
     self.summary = args['summary']
-    self.warnings = args['warnings']
     self.waypoint_order = args['waypoint_order']
-    self.copyrights = args['copyrights']
     self.total_distance = self._total_distance()
     self.total_duration = self._total_duration()
 
@@ -28,3 +25,14 @@ class Route (object):
     durations = [leg['duration']['value'] for leg in self.legs]
     total_duration = reduce(lambda x, y: x + y, durations)
     return total_duration
+
+  def _process_leg (self, leg):
+    res = leg.copy()
+    del res['traffic_speed_entry']
+    res['steps'] = [self._process_step(e) for e in res['steps']]
+    return res
+
+  def _process_step (self, step):
+    res = step.copy()
+    del res['polyline']
+    return res
