@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-import config from 'config'
+import config from '../../config/credentials/secrets'
 import * as L from 'leaflet'
 
 const icon = L.icon({
-    iconUrl: '../images/marker-icon.png',
-    shadowUrl: '../images/marker-shadow.png',
+    iconUrl: '/public/images/marker-icon.png',
+    shadowUrl: '/public/images/marker-shadow.png',
     iconSize: [25, 41],
     shadowSize: [50, 64],
     iconAnchor: [12.5, 41],

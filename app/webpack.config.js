@@ -7,14 +7,14 @@ var webpack = require('webpack'),
 module.exports = {
   target: 'web',
   cache: 'true',
+  devtool: 'source-map',
   entry: {
     app: path.join(__dirname, 'src', "index.js")
   },
 
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/',
-    filename: '[name].js'
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js'
   },
 
   module: {
@@ -36,14 +36,8 @@ module.exports = {
 
   context: path.join(__dirname, 'src'),
 
-  resolve: {
-    alias: {
-      config: path.join(__dirname, 'config/credentials', process.env.NODE_ENV)
-    }
-  },
-
   plugins: [
-    new ExtractTextPlugin("[name].css"),
+    new ExtractTextPlugin("bundle.css"),
     new HtmlWebpackPlugin({
       inject: true,
       template: "index.html"

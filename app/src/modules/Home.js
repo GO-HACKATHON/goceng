@@ -16,7 +16,7 @@ export default React.createClass({
             background:'white',
             position: 'absolute',
             width: '100%',
-            zIndex: 9999
+            zIndex: 999
           }}>
           <MaterialSearchBar floatingLabelText="Origin"
             hintText="Pickup location"/>
