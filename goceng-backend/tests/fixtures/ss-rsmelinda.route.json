@@ -1,0 +1,191 @@
+{
+  "routes": [
+    {
+      "overview_polyline": {
+        "points": "no`i@c_soS`BK~BEhENd@@h@JNCTE|@O^SFu@BuAGuC?kBJoAVmB\\wARq@d@eAT[p@gAnCeEvAqB`A{AhDiF~AcDvAgDvAeDfAsBf@_Af@o@`BgBBOLShDcEzAkB`@m@Ti@b@wAPeADw@BuA?mAL?|@@dB?VBp@?pBAtBC~GI|DE|GIZ}@N_A"
+      }, 
+      "warnings": [], 
+      "total_duration": 630, 
+      "bounds": {
+        "northeast": {
+          "lat": -6.8890381, 
+          "lng": 107.5982415
+        }, 
+        "southwest": {
+          "lat": -6.9066519, 
+          "lng": 107.5814041
+        }
+      }, 
+      "waypoint_order": [], 
+      "summary": "Jl. Dr. Djunjunan", 
+      "copyrights": "Map data \u00a92017 Google", 
+      "total_distance": 3153, 
+      "legs": [
+        {
+          "distance": {
+            "text": "3.2 km", 
+            "value": 3153
+          }, 
+          "traffic_speed_entry": [], 
+          "end_address": "Jl. Dr. Cipto No. 1, Pasirkaliki, Cicendo, Pasir Kaliki, Cicendo, Kota Bandung, Jawa Barat 40171, Indonesia", 
+          "via_waypoint": [], 
+          "start_address": "Jl. Surya Sumantri No.36A, Sukagalih, Sukajadi, Kota Bandung, Jawa Barat 40164, Indonesia", 
+          "start_location": {
+            "lat": -6.8890381, 
+            "lng": 107.5814648
+          }, 
+          "steps": [
+            {
+              "html_instructions": "Head <b>south</b> on <b>Jl. Surya Sumantri</b><div style=\"font-size:0.9em\">Pass by Indomaret (on the right)</div>", 
+              "distance": {
+                "text": "0.3 km", 
+                "value": 287
+              }, 
+              "travel_mode": "DRIVING", 
+              "start_location": {
+                "lat": -6.8890381, 
+                "lng": 107.5814648
+              }, 
+              "polyline": {
+                "points": "no`i@c_soSt@Ej@ED?xBEh@@~CLd@@h@JB?"
+              }, 
+              "duration": {
+                "text": "1 min", 
+                "value": 42
+              }, 
+              "end_location": {
+                "lat": -6.8916026, 
+                "lng": 107.5813959
+              }
+            }, 
+            {
+              "html_instructions": "Turn <b>left</b> onto <b>Jl. Dr. Djunjunan</b><div style=\"font-size:0.9em\">Pass by Vio Hotel Pasteur (on the left)</div>", 
+              "distance": {
+                "text": "1.6 km", 
+                "value": 1579
+              }, 
+              "travel_mode": "DRIVING", 
+              "maneuver": "turn-left", 
+              "start_location": {
+                "lat": -6.8916026, 
+                "lng": 107.5813959
+              }, 
+              "polyline": {
+                "points": "n_ai@w~roSJCHAJCFALAZGJCDCXOB]BW@W@M?M?a@AU?GAc@CsA?S?E@mAACBa@Fm@@UTwA@MZiALc@DMd@eAT[BEl@aABEFKr@aAnAqB\\a@l@{@FMBET[Vc@HOHKJOhAgB^g@r@iANWP_@t@}AFMJYNYHWp@{AHSN_@p@yAJWDIFIN]h@aAb@w@BGd@m@@A`BgB"
+              }, 
+              "duration": {
+                "text": "4 mins", 
+                "value": 234
+              }, 
+              "end_location": {
+                "lat": -6.898187099999999, 
+                "lng": 107.5934486
+              }
+            }, 
+            {
+              "html_instructions": "Slight <b>left</b> to stay on <b>Jl. Dr. Djunjunan</b>", 
+              "distance": {
+                "text": "0.5 km", 
+                "value": 474
+              }, 
+              "travel_mode": "DRIVING", 
+              "maneuver": "turn-slight-left", 
+              "start_location": {
+                "lat": -6.898187099999999, 
+                "lng": 107.5934486
+              }, 
+              "polyline": {
+                "points": "thbi@ajuoSBODKFGpAaBNSf@k@^a@b@e@V_@DEX_@`@m@Ti@Tk@Lk@Jk@DYBi@@MBe@?o@"
+              }, 
+              "duration": {
+                "text": "2 mins", 
+                "value": 93
+              }, 
+              "end_location": {
+                "lat": -6.900191100000001, 
+                "lng": 107.5970874
+              }
+            }, 
+            {
+              "html_instructions": "Turn <b>right</b> onto <b>Jl. Pasirkaliki</b><div style=\"font-size:0.9em\">Pass by Columbus (on the left)</div>", 
+              "distance": {
+                "text": "0.7 km", 
+                "value": 738
+              }, 
+              "travel_mode": "DRIVING", 
+              "maneuver": "turn-right", 
+              "start_location": {
+                "lat": -6.900191100000001, 
+                "lng": 107.5970874
+              }, 
+              "polyline": {
+                "points": "dubi@y`voS?y@?SH?B?J?D?H?`@@`@AbA@VBp@?vAAX?z@Ax@AlCCrBEN?L?fDEH?J?x@CN?d@?lDE"
+              }, 
+              "duration": {
+                "text": "4 mins", 
+                "value": 244
+              }, 
+              "end_location": {
+                "lat": -6.906434, 
+                "lng": 107.5976058
+              }
+            }, 
+            {
+              "html_instructions": "Turn <b>left</b> onto <b>Jl. Pajajaran</b><div style=\"font-size:0.9em\">Pass by Richeese Factory Pajajaran (on the right)</div><div style=\"font-size:0.9em\">Destination will be on the left</div>", 
+              "distance": {
+                "text": "75 m", 
+                "value": 75
+              }, 
+              "travel_mode": "DRIVING", 
+              "maneuver": "turn-left", 
+              "start_location": {
+                "lat": -6.906434, 
+                "lng": 107.5976058
+              }, 
+              "polyline": {
+                "points": "d|ci@advoSBGDMFSHSDMHq@"
+              }, 
+              "duration": {
+                "text": "1 min", 
+                "value": 17
+              }, 
+              "end_location": {
+                "lat": -6.9066519, 
+                "lng": 107.5982415
+              }
+            }
+          ], 
+          "duration": {
+            "text": "11 mins", 
+            "value": 630
+          }, 
+          "end_location": {
+            "lat": -6.9066519, 
+            "lng": 107.5982415
+          }
+        }
+      ]
+    }
+  ], 
+  "status": "OK", 
+  "geocoded_waypoints": [
+    {
+      "place_id": "ChIJS2pSk33maC4RB-jneJay5UY", 
+      "geocoder_status": "OK", 
+      "types": [
+        "establishment", 
+        "gas_station", 
+        "point_of_interest"
+      ]
+    }, 
+    {
+      "place_id": "ChIJmfy4JUDmaC4RiwHvdXQl1_4", 
+      "geocoder_status": "OK", 
+      "types": [
+        "establishment", 
+        "hospital", 
+        "point_of_interest"
+      ]
+    }
+  ]
+}

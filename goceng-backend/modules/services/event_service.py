@@ -62,6 +62,7 @@ class EventService(object):
   @staticmethod
   def get_events_by_area (area=None, timestamp=None, event_repo=EventRepo()):
     criteria = {'area': area}
+    is_now = timestamp == 'now'
     if timestamp is not None:
       if timestamp == 'now':
         timestamp = current_date()
@@ -70,7 +71,7 @@ class EventService(object):
         timestamp = datetime_floor_hour(timestamp)
       criteria['timestamp'] = str(timestamp)
     events = event_repo.find_by_criteria(criteria)
-    if len(events) == 0 and timestamp == 'now':
+    if len(events) == 0 and is_now:
       print '[event-service] events not found for %s, now mine data from waze' %(str(criteria))
       LOCATIONS = read_json('data/locations.json')
       EventService.mine_events(LOCATIONS[area], area=area)
