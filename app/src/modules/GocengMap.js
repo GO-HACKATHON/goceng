@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import React from 'react'
+import { Map, Marker, Popup, TileLayer, Polyline } from 'react-leaflet'
 import config from 'config'
 import * as L from 'leaflet'
+import * as RoutingService from './RoutingService'
 
 const icon = L.icon({
     iconUrl: '../images/marker-icon.png',
@@ -12,28 +13,67 @@ const icon = L.icon({
     shadowAnchor: [14, 64],
 });
 
-const position = [-6.244265, 106.802469];
+const point_1 = [-6.8916026, 107.5813959]
+const point_2 = [-6.898187099999999, 107.5934486]
 
-const map = (
-  <Map center={position} zoom={15}>
-    <TileLayer
-      url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    />
-    <Marker 
-      position={position}
-      icon={icon}>
-      <Popup>
-        <span>A pretty CSS3 popup.<br/>Easily customizable.</span>
-      </Popup>
-    </Marker>
-  </Map>
-);
+const way_point_1 = [-6.891607, 107.581441]
+const way_point_2 = [-6.898188 , 107.593448]
 
-class GocengMap extends Component {
+export default React.createClass({
+  getInitialState() {
+    return {
+      tileLayerUrl: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      tileLayerAttribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      // mapCenter: [-6.244265, 106.802469],
+      mapCenter: point_1,
+      markerPosition: [-6.244265, 106.802469],
+      polylinePositions: [point_1, way_point_1, way_point_2, point_2]
+    }
+  },
+  pointsToString(points){
+    var string = "";
+    points.forEach(function(point){
+      console.log(point)
+      string += point[1] + ',' + point[0] + ';' 
+    })
+    return string.slice(0,-1)
+  },
+  componentDidMount(){
+    // RoutingService.getRouting().then((result)=>{
+    //   console.log(result)
+    // });
+    // $.getJSON('sample_data.json', function(result){
+    //   console.log(result)
+    //   const steps = result.routes[0].legs[0].steps
+    //   const start_location = steps[0].start_location
+    //   const start_point = [start_location.lat, start_location.lng]
+    //   self.setState({mapCenter: start_point})
+    //   self.setState({markerPosition: start_point})
+    //   var points = []
+    //   steps.forEach(function(step){
+    //     points.push([step.start_location.lat, step.start_location.lng])
+    //   })
+    //   const end_location = steps[steps.length - 1].end_location
+    //   points.push([end_location.lat, end_location.lng])
+    //   const pointsString = self.pointsToString(points)
+    //   console.log(pointsString)
+    //   self.setState({polylinePositions: points})
+    // })
+    
+  },
   render() {
-    return map
+    return (
+      <Map center={this.state.mapCenter} zoom={15}>
+        <TileLayer url={this.state.tileLayerUrl} attribution={this.state.tileLayerAttribution}/>
+        <Marker 
+          position={this.state.markerPosition}
+          icon={icon}>
+          <Popup>
+            <span>A pretty CSS3 popup.<br/>Easily customizable.</span>
+          </Popup>
+        </Marker>
+        <Polyline positions={this.state.polylinePositions}></Polyline>
+      </Map>
+    )
   }
-}
-
-export default GocengMap
+})
