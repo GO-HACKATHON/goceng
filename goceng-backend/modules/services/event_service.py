@@ -79,11 +79,10 @@ class EventService(object):
     return events
 
 if __name__ == '__main__':
-  # LOCATIONS = read_json('data/locations.json')
-  # while True:
-  #   print ''
-  #   len_events = EventService.mine_events(LOCATIONS['JAKARTA1'], area='JAKARTA1')
-  #   print '%s event(s) added' % (str(len_events))
-  #   time.sleep(Config.TIMEOUT)
-  pass
+  LOCATIONS = read_json('data/locations.json')
+  while True:
+    print ''
+    len_events = EventService.mine_events(LOCATIONS['jakarta2'], area='jakarta2')
+    print '%s event(s) added' % (str(len_events))
+    time.sleep(Config.TIMEOUT)
 
