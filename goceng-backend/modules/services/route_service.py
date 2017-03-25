@@ -41,8 +41,11 @@ class RouteService(object):
     return result
 
   @staticmethod
-  def get_route (origin, destination, area='bandung'):
-    raw_result = RouteService.url_get(RouteService.URL % (origin, destination, Config.GMAPS_API_KEY))
+  def get_route (origin, destination, waypoints=None, area='bandung'):
+    url = RouteService.URL % (origin, destination, Config.GMAPS_API_KEY)
+    if waypoints is not None:
+      url += ('&waypoints=' + waypoints)
+    raw_result = RouteService.url_get(url)
     current_events = EventService.get_events_by_area(area=area, timestamp='now')
     total_events = EventService.get_events_by_area(area=area)
     result = RouteService.preprocess(raw_result, events=current_events, total_events=total_events)
