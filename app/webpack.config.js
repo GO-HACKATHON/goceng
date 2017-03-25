@@ -36,12 +36,22 @@ module.exports = {
 
   context: path.join(__dirname, 'src'),
 
+  devServer: {
+    publicPath: '/public/',
+    hot: true,
+    inline: true,
+    host: 'localhost',
+    port: 1234,
+    proxy: {
+      '*': 'http://localhost:' + 3030
+    },
+    historyApiFallback: true,
+    stats: 'minimal',
+  },
+
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("bundle.css"),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: "index.html"
-    }),
     new webpack.NoErrorsPlugin(),
     new CopyWebpackPlugin([
       { from: 'images', to: 'images' }

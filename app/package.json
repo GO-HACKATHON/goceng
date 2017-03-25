@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --port 1234 --inline --content-base dist --history-api-fallback",
+    "dev": "NODE_ENV=development node server.js & webpack-dev-server --progress --color",
+    "start": "npm run build && node server.js",
     "build": "webpack --progress --colors"
   },
   "author": "Dedy Prasetiady",
