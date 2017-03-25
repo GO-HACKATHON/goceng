@@ -142,10 +142,6 @@ class RouteService(object):
     for t in threads:
       t.join()
 
-    # result = Queue.Queue()
-    # for url in urls:
-    #   RouteService.url_get_queue(url, result)
-
     result = list(result.queue)
     result = [[urls.index(e[0]), e[1]] for e in result]
     result = sorted(result, key=lambda x: x[0])
@@ -159,6 +155,8 @@ class RouteService(object):
           for step in leg['steps']:
             for intersection in step['intersections']:
               raw_locs += [intersection['location']]
+      for waypoint in result[idx]['waypoints']:
+        raw_locs += [waypoint['location']]
       locations = [{'lng':e[0], 'lat':e[1]} for e in raw_locs]
       res['intersections'] = locations
       new_steps += [res]
