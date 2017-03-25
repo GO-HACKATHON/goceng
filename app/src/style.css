@@ -8,6 +8,19 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#app {
+    height: 100%;
+    width: 100%;
+}
+.main-container, .container {
+  height: 100%;
+  width: 100%;
+}
 .footer {
   position: absolute;
   bottom: 0;
