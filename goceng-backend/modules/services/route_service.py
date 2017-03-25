@@ -155,8 +155,8 @@ class RouteService(object):
           for step in leg['steps']:
             for intersection in step['intersections']:
               raw_locs += [intersection['location']]
-      for waypoint in result[idx]['waypoints']:
-        raw_locs += [waypoint['location']]
+      # for waypoint in result[idx]['waypoints']:
+      #   raw_locs += [waypoint['location']]
       locations = [{'lng':e[0], 'lat':e[1]} for e in raw_locs]
       res['intersections'] = locations
       new_steps += [res]

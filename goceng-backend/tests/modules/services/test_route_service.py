@@ -73,9 +73,6 @@ class RouteServiceTests(unittest.TestCase):
  
   def testWaypointsPerStep(self):
     # route = read_json('tests/fixtures/ss-rsmelinda.route.json')
-    # step = route['routes'][0]['legs'][0]['steps'][1]
-    # res = RouteService.waypoints_per_step(step)
-    # print_json(res)
     # steps = route['routes'][0]['legs'][0]['steps']
     # res = RouteService.waypoints_per_steps(steps)
     # print_json(res)
