@@ -13,7 +13,7 @@ class EventRepo (object):
     obj_ins = obj.copy()
     try:
       self.db.events.insert_one(obj_ins)
-      print '[event-insert] [%s] %s' % (current_date(), str(obj_ins['street']))
+      print '[event-repo] [%s] %s' % (current_date(), str(obj_ins['street']))
       return True
     except Exception as e:
       print str(e)

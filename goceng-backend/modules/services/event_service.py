@@ -3,7 +3,7 @@ import time
 import urllib
 
 from config import Config
-from modules.helper import print_json, read_json, datetime_from_str, datetime_floor_hour
+from modules.helper import print_json, read_json, datetime_from_str, datetime_floor_hour, current_date
 from modules.objects.event import Event
 from modules.repositories.event_repo import EventRepo
 
@@ -63,10 +63,18 @@ class EventService(object):
   def get_events_by_area (area=None, timestamp=None, event_repo=EventRepo()):
     criteria = {'area': area}
     if timestamp is not None:
-      timestamp = datetime_from_str(timestamp)
-      timestamp = datetime_floor_hour(timestamp)
+      if timestamp == 'now':
+        timestamp = current_date()
+      else:
+        timestamp = datetime_from_str(timestamp)
+        timestamp = datetime_floor_hour(timestamp)
       criteria['timestamp'] = str(timestamp)
     events = event_repo.find_by_criteria(criteria)
+    if len(events) == 0:
+      print '[event-service] events not found for %s, now mine data from waze' %(str(criteria))
+      LOCATIONS = read_json('data/locations.json')
+      EventService.mine_events(LOCATIONS[area], area=area)
+      events = event_repo.find_by_criteria(criteria)
     return events
 
 if __name__ == '__main__':
@@ -76,6 +84,5 @@ if __name__ == '__main__':
   #   len_events = EventService.mine_events(LOCATIONS['JAKARTA1'], area='JAKARTA1')
   #   print '%s event(s) added' % (str(len_events))
   #   time.sleep(Config.TIMEOUT)
-  res = EventService.get_events_by_area(area='bandung', timestamp='2017-03-23 02:10:00')
-  print_json(res)
+  pass
 
