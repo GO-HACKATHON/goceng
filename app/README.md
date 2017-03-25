@@ -1,4 +1,4 @@
-GoHackathon
+GoHackathon FrontEnd
 ===========
 
 ### Installation
