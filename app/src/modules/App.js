@@ -6,7 +6,7 @@ import 'bootstrap'
 export default React.createClass({
   render() {
     return (
-      <div>
+      <div className="main-container">
         <NavBar />
 
         <div className="container">
