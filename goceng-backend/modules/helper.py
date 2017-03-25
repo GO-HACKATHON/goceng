@@ -18,3 +18,10 @@ def flatten (arr):
 
 def uniq (arr):
   return list(set(arr))
+
+def datetime_floor_hour (datetime_obj):
+  result = deepcopy(datetime_obj)
+  return result.replace(minute=0, second=0, microsecond=0)
+
+def current_date ():
+  return datetime.now().replace(minute=0, second=0, microsecond=0)
