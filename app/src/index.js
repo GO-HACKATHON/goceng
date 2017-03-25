@@ -4,6 +4,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import App from './modules/App'
 import Home from './modules/Home'
 import GocengMap from './modules/GocengMap'
+import DetailPage from './modules/DetailPage'
 import '../node_modules/font-awesome/css/font-awesome.css'
 import '../node_modules/react-bootstrap-typeahead/css/Token.css'
 import '../node_modules/react-bootstrap-typeahead/css/Typeahead.css'
@@ -15,6 +16,7 @@ render((
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <Route path="/maps" component={GocengMap}/>
+        <Route path="/details" component={DetailPage}/>
       </Route>
   </Router>
 ), document.getElementById('app'))
