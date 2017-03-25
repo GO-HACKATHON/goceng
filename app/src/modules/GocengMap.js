@@ -1,6 +1,5 @@
 import React from 'react'
 import { Map, Marker, Popup, TileLayer, Polyline } from 'react-leaflet'
-import config from '../../config/credentials/secrets'
 import * as L from 'leaflet'
 import * as RoutingService from './RoutingService'
 
