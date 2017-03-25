@@ -1,11 +1,11 @@
 import React from 'react'
+import GocengMap from './GocengMap'
 
 export default React.createClass({
   render() {
     return <div>
-      <div className="page-header">
-        <h1>Home</h1>
-      </div>
+      <br/>
+      <GocengMap/>
     </div>
   }
 })

@@ -7,15 +7,11 @@ export default React.createClass({
   render() {
     return (
       <div className="main-container">
-        <NavBar />
-
         <div className="container">
           <br/><br/>
           {this.props.children}
           <br/><br/>
         </div>
-
-        <Footer />
       </div>
     )
   }
