@@ -6,15 +6,10 @@ function _ajax(settings, resolve, reject){
   });
 }
 
-const origin = 'Universitas Kristen Maranatha, Sukawarna, Jawa Barat, West Java';
-const destination = 'Rumah Sakit Melinda 2, Pasirkaliki, Bandung City, West Java';
-const timestamp = '2017-03-25 22:00:00';
+const time = "2017-03-25 07:10:00"
 
-// const url = '10.17.10.185:5001/v1/multiple_route?' +
-//   'origin=' + origin + 
-//   '&destination=' + destination + 
-//   '&timestamp=' + timestamp;
-const url = "http://10.17.10.185:5001/v1/multiple_route?origin=Universitas%20Kristen%20Maranatha%2C%20Sukawarna%2C%20Jawa%20Barat%2C%20West%20Java&destination=Rumah%20Sakit%20Melinda%202%2C%20Pasirkaliki%2C%20Bandung%20City%2C%20West%20Java&timestamp=2017-03-25%2022%3A00%3A00"
+const url = "http://10.17.10.185:5001/v1/multiple_route?origin=Universitas%20Kristen%20Maranatha%2C%20Sukawarna%2C%20Jawa%20Barat%2C%20West%20Java&destination=Rumah%20Sakit%20Melinda%202%2C%20Pasirkaliki%2C%20Bandung%20City%2C%20West%20Java&timestamp=" +
+              time + "&intersections=1"
 
 console.log(url)
 
