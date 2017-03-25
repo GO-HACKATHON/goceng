@@ -25,6 +25,7 @@
     "react": "^15.4.2",
     "react-bootstrap-typeahead": "^0.5.3",
     "react-dom": "^15.4.2",
+    "react-lazyload": "^2.2.5",
     "react-leaflet": "^1.1.4",
     "react-router": "4.0.0-alpha.5",
     "react-router-dom": "^4.0.0",
