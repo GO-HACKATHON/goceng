@@ -5,6 +5,7 @@ import DetailCard from './DetailCard'
 import {Card} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import * as RoutingService from './RoutingService'
+import LoadingPage from './LoadingPage'
 
 export default React.createClass({
   getInitialState() {
@@ -13,7 +14,8 @@ export default React.createClass({
       originPosition: [-6.244265, 106.802469],
       destinationAddress: '',
       destinationPosition: null,
-      polylines: []
+      polylines: [],
+      loading: false
     }
   },
   changeOrigin(address, position) {
@@ -25,6 +27,8 @@ export default React.createClass({
     this.setState({destinationPosition: position})
   },
   doQuery() {
+    this.setState({loading: true})
+
     const origin = this.state.originAddress
     const destination = this.state.destinationAddress
     
@@ -47,7 +51,13 @@ export default React.createClass({
         polylines.push(polyline)
       })
       self.setState({polylines: polylines})
-    });
+    })
+    .catch(error => {
+      this.setState({loading: false})
+    })
+    .then(result => {
+      this.setState({loading: false})
+    })
   },
   render() {
     return (
@@ -56,6 +66,7 @@ export default React.createClass({
         width: '100%',
         height: '100%'
       }}>
+        <LoadingPage visible={this.state.loading} />
         <div style={{
             position: 'absolute',
             width: '96%',
