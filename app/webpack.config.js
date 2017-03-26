@@ -7,14 +7,14 @@ var webpack = require('webpack'),
 module.exports = {
   target: 'web',
   cache: 'true',
+  devtool: 'source-map',
   entry: {
     app: path.join(__dirname, 'src', "index.js")
   },
 
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/',
-    filename: '[name].js'
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js'
   },
 
   module: {
@@ -23,7 +23,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015','react']
+          presets: ['es2015','react', 'stage-0']
         }
       },
       { test: /\.css?$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
@@ -36,18 +36,22 @@ module.exports = {
 
   context: path.join(__dirname, 'src'),
 
-  resolve: {
-    alias: {
-      config: path.join(__dirname, 'config/credentials', process.env.NODE_ENV)
-    }
+  devServer: {
+    publicPath: '/public/',
+    hot: true,
+    inline: true,
+    host: 'localhost',
+    port: 1234,
+    proxy: {
+      '*': 'http://localhost:' + 3030
+    },
+    historyApiFallback: true,
+    stats: 'minimal',
   },
 
   plugins: [
-    new ExtractTextPlugin("[name].css"),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: "index.html"
-    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin("bundle.css"),
     new webpack.NoErrorsPlugin(),
     new CopyWebpackPlugin([
       { from: 'images', to: 'images' }
