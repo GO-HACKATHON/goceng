@@ -120,6 +120,7 @@ code {
 .suggestion-icon {
   margin-right: 8px;
 }
-.form-group {
-  width: 92%
+/* Item box */
+.item-box > .item {
+  margin-right: 20px
 }

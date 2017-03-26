@@ -89,10 +89,12 @@ export default React.createClass({
             zIndex: 999
           }}>
           <div style={{fontFamily: 'Roboto, sans-serif'}}>
-            <MaterialSearchBar placeholder="Your Origin"
-              onChange={this.changeOrigin}/>
-            <MaterialSearchBar placeholder="Your Destination"
-              onChange={this.changeDestination}/>
+            <div className="searchBar">
+              <MaterialSearchBar placeholder="Your Origin"
+                onChange={this.changeOrigin}/>
+              <MaterialSearchBar placeholder="Your Destination"
+                onChange={this.changeDestination}/>
+            </div>
             <DetailPage style={{
                 overflow: 'auto',
                 height: 400
