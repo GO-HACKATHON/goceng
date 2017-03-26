@@ -3,6 +3,16 @@ import scriptLoader from 'react-async-script-loader'
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
 import config from '../../config/credentials/secrets'
 
+const AutocompleteItem = ({ formattedSuggestion }) => {
+  return (
+    <div className="suggestion-item">
+      <i className='fa fa-map-marker suggestion-icon'/>
+      <strong>{formattedSuggestion.mainText}</strong>{' '}
+      <small className="text-muted">{formattedSuggestion.secondaryText}</small>
+    </div>
+  )
+}
+
 class MaterialSearchBar extends Component {  
   state = { address: "" }
   
@@ -16,6 +26,25 @@ class MaterialSearchBar extends Component {
       }
     })
   }
+
+  componentWillReceiveProps ({ isScriptLoaded, isScriptLoadSucceed }) {
+    if (isScriptLoaded && !this.props.isScriptLoaded) {
+      if (isScriptLoadSucceed) {
+        this.initAutoComplete()
+      } else this.props.onError()
+    }
+  }
+ 
+  componentDidMount () {
+    const { isScriptLoaded, isScriptLoadSucceed } = this.props
+    if (isScriptLoaded && isScriptLoadSucceed) {
+      this.initAutoComplete()
+    }
+  }
+
+  initAutoComplete() {
+    
+  }
   
   render() {
     const { isScriptLoaded, isScriptLoadSucceed } = this.props
@@ -24,11 +53,20 @@ class MaterialSearchBar extends Component {
         location: new google.maps.LatLng(-6.244265, 106.802469),
         radius: 1000
       }
+      const cssClasses = {
+        root: 'form-group',
+        label: 'form-label',
+        input: 'search-input',
+        autocompleteContainer: 'autocomplete-container'
+      }
             
       return (
         <PlacesAutocomplete
           value={this.state.address}
+          classNames={cssClasses}
+          autocompleteItem={AutocompleteItem}
           onChange={this.onChange}
+          placeholder={this.props.placeholder}
           onEnterKeyDown={this.onEnterKeyDown} 
           options={options}
         />
