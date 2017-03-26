@@ -18,7 +18,8 @@ export default React.createClass({
       destinationPosition: null,
       polylines: [],
       sugestions: [],
-      loading: false
+      loading: false,
+      visibleDetail: false
     }
   },
   changeOrigin(address, position) {
@@ -50,6 +51,7 @@ export default React.createClass({
     console.log('doQuery')
     const time =  moment().format('YYYY-MM-DD HH:00:00')
     
+    this.setState({visibleDetail: true})
     this.setState({loading: true})
 
     const origin = this.state.originAddress
@@ -100,6 +102,7 @@ export default React.createClass({
                 height: 400
               }}
               sugestions={this.state.sugestions} 
+              visible={this.state.visibleDetail}
             />
           </div>
         </div>

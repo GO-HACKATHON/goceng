@@ -22,10 +22,14 @@ function calcColor(meter) {
 
 class DetailPage extends Component {
     static defaultProps = {
-        style: {}
+        style: {},
+        visible: false
     }
     
     render() {
+        if (!this.props.visible)
+            return <div/>
+        
         let items = []
         var key = 1
         this.props.sugestions.forEach(function(sugestion){
