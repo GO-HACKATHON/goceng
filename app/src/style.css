@@ -90,14 +90,6 @@ code {
   .btn {
     margin-top: 1.5rem;
   }
-
-  .form-group {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    width: 50%;
-  }
 }
 
 .search-input,

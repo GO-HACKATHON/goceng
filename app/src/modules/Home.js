@@ -75,12 +75,12 @@ export default React.createClass({
             marginLeft: '-48%',
             zIndex: 999
           }}>
-          <Card>
+          <div style={{fontFamily: 'Roboto, sans-serif'}}>
             <MaterialSearchBar placeholder="Your Origin"
               onChange={this.changeOrigin}/>
             <MaterialSearchBar placeholder="Your Destination"
               onChange={this.changeDestination}/>
-          </Card>
+          </div>
         </div>
         <GocengMap 
           originPosition={this.state.originPosition}
