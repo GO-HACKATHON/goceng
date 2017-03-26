@@ -73,3 +73,61 @@ code {
 .leaflet-control-container{
   display: none;
 }
+
+/* Search bar */
+@media (min-width: 768px) {
+  .alert {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    -webkit-animation: fadein .75s;
+    -moz-animation: fadein .75s;
+    -ms-animation: fadein .75s;
+    -o-animation: fadein .75s;
+    animation: fadein .75s;
+  }
+
+  .btn {
+    margin-top: 1.5rem;
+  }
+
+  .form-group {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 50%;
+  }
+}
+
+.search-input,
+.search-input:focus,
+.search-input:active {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  border: honeydew;
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 2px;
+  outline: none;
+}
+.autocomplete-container {
+  border-bottom: honeydew !important;
+  border-left: honeydew !important;
+  border-right: honeydew !important;
+  border-top: 1px solid #e6e6e6 !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border-radius: 0 0 2px 2px;
+}
+/* Suggestion box */
+.suggestion-item {
+  padding: 4px;
+  text-align: left;
+}
+.suggestion-icon {
+  margin-right: 8px;
+}
+.form-group {
+  width: 92%
+}
