@@ -70,7 +70,7 @@ class RouteService(object):
     if waypoints is not None:
       url += ('&waypoints=' + waypoints)
     raw_result = RouteService.url_get(url)
-    timestamps = get_ranged_timestamps(str(pivot_timestamp))
+    timestamps = get_ranged_timestamps(str(pivot_timestamp), replace=(area =='bandung'))
     result = []
     for timestamp in timestamps:
       current_events = EventService.get_events_by_area(area=area, timestamp=timestamp)
