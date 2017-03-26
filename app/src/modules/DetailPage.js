@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
 import LazyLoad from 'react-lazyload'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import DetailItem from './DetailItem'
 
-const DetailPage = React.createClass({
+class DetailPage extends Component {
+    static defaultProps = {
+        style: {}
+    }
+
     render() {
         let items = []
         for (let i = 0; i < 10; ++i) {
@@ -21,21 +25,11 @@ const DetailPage = React.createClass({
             },
         }
         return (
-            <div>
-                <AppBar
-                    style={{
-                        position:'fixed',
-                        top:0
-                    }}
-                    title={<span style={styles.title}>Booking Time Recommendation</span>}
-                    iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-                />
-                <div style={{marginTop:64}}>
-                    {items}
-                </div>
+            <div style={Object.assign({}, {marginTop:64}, this.props.style)}>
+                {items}
             </div>
         )
     }
-})
+}
 
 export default DetailPage

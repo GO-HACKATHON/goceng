@@ -6,6 +6,7 @@ import {Card} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import * as RoutingService from './RoutingService'
 import LoadingPage from './LoadingPage'
+import DetailPage from './DetailPage'
 
 export default React.createClass({
   getInitialState() {
@@ -74,6 +75,7 @@ export default React.createClass({
         height: '100%'
       }}>
         <LoadingPage visible={this.state.loading} />
+        
         <div style={{
             position: 'absolute',
             width: '96%',
@@ -87,6 +89,10 @@ export default React.createClass({
               onChange={this.changeOrigin}/>
             <MaterialSearchBar placeholder="Your Destination"
               onChange={this.changeDestination}/>
+            <DetailPage style={{
+              overflow: 'auto',
+              height: 400
+            }} />
           </div>
         </div>
         <GocengMap 
@@ -102,7 +108,7 @@ export default React.createClass({
             marginLeft: '-48%',
             zIndex: 999
           }}>
-          <RaisedButton label="Search" primary={true} fullWidth={true} 
+          <RaisedButton label="Show Prediction" primary={true} fullWidth={true} 
             onClick={this.doQuery}/>
         </div>
       </div>
