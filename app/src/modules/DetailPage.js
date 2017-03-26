@@ -36,7 +36,7 @@ class DetailPage extends Component {
           var obj = sugestion.routes[0];
           console.log(obj)
           items.push(
-              <LazyLoad height={200} key={key++}>
+              <LazyLoad key={key++}>
                   <DetailItem
                     time={obj.timestamp}
                     density={obj.jam_meter}
