@@ -5,15 +5,18 @@ import DetailCard from './DetailCard'
 import {Card} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import * as RoutingService from './RoutingService'
+import LoadingPage from './LoadingPage'
 
 export default React.createClass({
   getInitialState() {
     return {
       originAddress: '',
-      originPosition: [-6.244265, 106.802469],
+      originPosition: [-6.893248, 107.610659],
       destinationAddress: '',
       destinationPosition: null,
-      polylines: []
+      polylines: [],
+      sugestions: [],
+      loading: false
     }
   },
   changeOrigin(address, position) {
@@ -24,38 +27,53 @@ export default React.createClass({
     this.setState({destinationAddress: address})
     this.setState({destinationPosition: position})
   },
+  parsePolylinesFromRoute(route){
+    const steps = route.legs[0].steps
+    
+    var polylines = []
+    steps.forEach(function(step){
+      var points = []
+      step.intersections.forEach(function(intersection){
+        points.push([intersection.lat, intersection.lng])
+      })
+      const polyline = {
+        'points': points,
+        'jam_meter': step.jam_meter
+      }
+      polylines.push(polyline)
+    })
+    return polylines
+  },
   doQuery() {
+    this.setState({loading: true})
+
     const origin = this.state.originAddress
     const destination = this.state.destinationAddress
     
     var self = this
     
     RoutingService.getRouting(origin, destination).then((result)=>{
+      console.log(result)
+      self.setState({sugestions: result})
       const route = result[1].routes[0]
-      const steps = route.legs[0].steps
-      
-      var polylines = []
-      steps.forEach(function(step){
-        var points = []
-        step.intersections.forEach(function(intersection){
-          points.push([intersection.lat, intersection.lng])
-        })
-        const polyline = {
-          'points': points,
-          'jam_meter': step.jam_meter
-        }
-        polylines.push(polyline)
-      })
+      const polylines = self.parsePolylinesFromRoute(route)
       self.setState({polylines: polylines})
-    });
+    })
+    .catch(error => {
+      this.setState({loading: false})
+    })
+    .then(result => {
+      this.setState({loading: false})
+    })
   },
-  render() {
+  render() { 
     return (
       <div style={{
         position: 'relative',
         width: '100%',
         height: '100%'
       }}>
+        <LoadingPage visible={this.state.loading} />
         <div style={{
             position: 'absolute',
             width: '96%',
@@ -64,12 +82,12 @@ export default React.createClass({
             marginLeft: '-48%',
             zIndex: 999
           }}>
-          <Card>
+          <div style={{fontFamily: 'Roboto, sans-serif'}}>
             <MaterialSearchBar placeholder="Your Origin"
               onChange={this.changeOrigin}/>
             <MaterialSearchBar placeholder="Your Destination"
               onChange={this.changeDestination}/>
-          </Card>
+          </div>
         </div>
         <GocengMap 
           originPosition={this.state.originPosition}
