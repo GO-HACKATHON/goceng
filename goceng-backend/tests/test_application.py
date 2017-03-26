@@ -47,11 +47,14 @@ class ApplicationTests(unittest.TestCase):
   def testMultipleRoute(self):
     # origin = 'Universitas Kristen Maranatha, Sukawarna, Jawa Barat, West Java'
     # destination = 'Rumah Sakit Melinda 2, Pasirkaliki, Bandung City, West Java'
-    # timestamp = '2017-03-25 22:10:00'
-    # response = self.app.get('/v1/route?origin=%s&destination=%s&timestamp=%s' % (origin, destination, timestamp))
-    # self.assertEqual(response.status_code, 200)
+    # timestamp = '2017-03-25 08:10:00'
+    # response = self.app.get('/v1/multiple_route?origin=%s&destination=%s&timestamp=%s' % (origin, destination, timestamp))
+    # # self.assertEqual(response.status_code, 200)
     # res = json.loads(response.data)
-    # print res
+    # # print res
+    # for route in res:
+    #   print route['routes'][0]['total_distance']
+    #   print route['routes'][0]['total_duration']
     pass
     
 if __name__ == "__main__":

@@ -5,16 +5,18 @@ import DetailCard from './DetailCard'
 import {Card} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import * as RoutingService from './RoutingService'
+import LoadingPage from './LoadingPage'
 
 export default React.createClass({
   getInitialState() {
     return {
       originAddress: '',
-      originPosition: [-6.244265, 106.802469],
+      originPosition: [-6.893248, 107.610659],
       destinationAddress: '',
       destinationPosition: null,
       polylines: [],
-      sugestions: []
+      sugestions: [],
+      loading: false
     }
   },
   changeOrigin(address, position) {
@@ -43,6 +45,8 @@ export default React.createClass({
     return polylines
   },
   doQuery() {
+    this.setState({loading: true})
+
     const origin = this.state.originAddress
     const destination = this.state.destinationAddress
     
@@ -54,7 +58,13 @@ export default React.createClass({
       const route = result[1].routes[0]
       const polylines = self.parsePolylinesFromRoute(route)
       self.setState({polylines: polylines})
-    });
+    })
+    .catch(error => {
+      this.setState({loading: false})
+    })
+    .then(result => {
+      this.setState({loading: false})
+    })
   },
   render() { 
     return (
@@ -63,6 +73,7 @@ export default React.createClass({
         width: '100%',
         height: '100%'
       }}>
+        <LoadingPage visible={this.state.loading} />
         <div style={{
             position: 'absolute',
             width: '96%',
@@ -72,9 +83,9 @@ export default React.createClass({
             zIndex: 999
           }}>
           <Card>
-            <MaterialSearchBar floatingLabelText="Your Origin"
+            <MaterialSearchBar placeholder="Your Origin"
               onChange={this.changeOrigin}/>
-            <MaterialSearchBar floatingLabelText="Your Destination"
+            <MaterialSearchBar placeholder="Your Destination"
               onChange={this.changeDestination}/>
           </Card>
         </div>
