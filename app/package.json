@@ -8,7 +8,7 @@
     "start": "npm run build && node server.js",
     "build": "webpack --progress --colors"
   },
-  "author": "Dedy Prasetiady",
+  "author": "Dedy Prasetiady, Lutviane A, Ananta Pandu",
   "license": "ISC",
   "dependencies": {
     "babel-plugin-syntax-class-properties": "^6.13.0",
