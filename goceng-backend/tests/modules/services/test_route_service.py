@@ -70,6 +70,14 @@ class RouteServiceTests(unittest.TestCase):
     leg = route['routes'][0]['legs'][0]
     res = RouteService.jam_per_leg(leg, events)
     self.assertEqual(res, 14)
+ 
+  def testWaypointsPerStep(self):
+    # route = read_json('tests/fixtures/ss-rsmelinda.route.json')
+    # steps = route['routes'][0]['legs'][0]['steps']
+    # res = RouteService.waypoints_per_steps(steps)
+    # print_json(res)
+    # print res
+    pass
 
 if __name__ == "__main__":
   unittest.main()
