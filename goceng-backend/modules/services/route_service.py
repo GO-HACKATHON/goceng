@@ -28,7 +28,7 @@ class RouteService(object):
     queue.put((url, data))
 
   @staticmethod
-  def preprocess (raw, events, total_events, intersections=False):
+  def preprocess (raw, events, total_events, intersections=False, timestamp=None):
     result = raw.copy()
     result['routes'] = [Route(route).to_dict() for route in result['routes']]
     routes = []
@@ -45,6 +45,7 @@ class RouteService(object):
         leg['jam_meter'] = sum([e['jam_meter'] for e in steps]) / float(len(steps))
         legs += [leg]
       route['legs'] = legs
+      route['timestamp'] = timestamp
       route['jam_meter'] = sum([e['jam_meter'] for e in legs]) / float(len(legs))
       routes += [route]
     result['routes'] = routes
@@ -60,7 +61,7 @@ class RouteService(object):
     raw_result = RouteService.url_get(url)
     current_events = EventService.get_events_by_area(area=area, timestamp='now')
     total_events = EventService.get_events_by_area(area=area)
-    result = RouteService.preprocess(raw_result, events=current_events, total_events=total_events)
+    result = RouteService.preprocess(raw_result, events=current_events, total_events=total_events, timestamp='now')
     return result
 
   @staticmethod
@@ -75,7 +76,7 @@ class RouteService(object):
     for timestamp in timestamps:
       current_events = EventService.get_events_by_area(area=area, timestamp=timestamp)
       total_events = EventService.get_events_by_area(area=area)
-      result += [RouteService.preprocess(raw_result, events=current_events, total_events=total_events, intersections=intersections)]
+      result += [RouteService.preprocess(raw_result, events=current_events, total_events=total_events, intersections=intersections, timestamp=timestamp)]
     return result
 
   @staticmethod
