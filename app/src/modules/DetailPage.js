@@ -14,7 +14,7 @@ class DetailPage extends Component {
         let items = []
         for (let i = 0; i < 10; ++i) {
             items.push(
-                <LazyLoad height={200} key={i}>
+                <LazyLoad key={i}>
                     <DetailItem/>
                 </LazyLoad>
             )

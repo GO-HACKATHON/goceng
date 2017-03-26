@@ -6,18 +6,16 @@ const DetailItem = ({
     density,
     color
 }) => {
+    const detail = (
+        <span className="item-box">
+            <span className="item duration">29 min</span>
+            <span className="item distance">4.5 km</span>
+            <span className="item traffic">low traffic</span>
+        </span>
+    )
     return (
-        <Card>
-            <CardTitle title="Card title" subtitle="Card subtitle" />
-            <CardText>
-                <div>
-                    <span>Best time to order GoJek</span>
-                    <h1>08.00</h1>
-                    <span>29 min</span>
-                    <span>4.5 km</span>
-                    <span>low traffic</span>
-                </div>
-            </CardText>
+        <Card style={{marginBottom: 10}}>
+            <CardTitle title="08.00" subtitle={detail} />
         </Card>
     )
 }

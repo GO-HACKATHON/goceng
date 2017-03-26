@@ -120,6 +120,10 @@ code {
 .suggestion-icon {
   margin-right: 8px;
 }
-.form-group {
-  width: 92%
+.searchBar {
+  overflow: hidden
+}
+/* Item box */
+.item-box > .item {
+  margin-right: 20px
 }
