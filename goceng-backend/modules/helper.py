@@ -39,10 +39,10 @@ def get_ranged_timestamps (timestamp, day=23, replace=True):
   if replace:
     pivot_timestamp = pivot_timestamp.replace(day=day)
     current_timestamp = current_timestamp.replace(day=day, hour=0)
-  timestamps = [pivot_timestamp - timedelta(hours=i) for i in range(23, 0, -1)]
-  timestamps += [pivot_timestamp + timedelta(hours=i) for i in range(24)]
+  timestamps = [pivot_timestamp - timedelta(hours=i) for i in range(11, 0, -1)]
+  timestamps += [pivot_timestamp + timedelta(hours=i) for i in range(13)]
   timestamps = [str(e) for e in timestamps]
-  index = timestamps.index(str(pivot_timestamp))
-  indexes = [(index+i)%48 for i in range(-2, 3)]
-  timestamps = [t for idx, t in enumerate(timestamps) if idx in indexes]
+  # index = timestamps.index(str(pivot_timestamp))
+  # indexes = [(index+i)%48 for i in range(-2, 3)]
+  # timestamps = [t for idx, t in enumerate(timestamps) if idx in indexes]
   return timestamps

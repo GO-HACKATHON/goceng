@@ -66,7 +66,7 @@ class RouteService(object):
 
   @staticmethod
   def get_multiple_route (origin, destination, timestamp, waypoints=None, area='bandung', intersections=False):
-    pivot_timestamp = datetime_floor_hour(datetime_from_str(timestamp))
+    pivot_timestamp = current_date()
     url = RouteService.URL % (origin, destination, Config.GMAPS_API_KEY)
     if waypoints is not None:
       url += ('&waypoints=' + waypoints)
