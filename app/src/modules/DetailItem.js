@@ -17,7 +17,7 @@ const DetailItem = ({
     return (
         <Card style={{
             marginBottom: 10,
-            background: 'rgb(255,255,255,0.4)'
+            background: color
         }}>
             <CardTitle title={moment(time).format('HH:00')} subtitle={detail} />
         </Card>
