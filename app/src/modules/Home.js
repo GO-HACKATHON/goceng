@@ -6,6 +6,22 @@ import {Card} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 
 export default React.createClass({
+  getInitialState() {
+    return {
+      originAddress: '',
+      originPosition: [-6.244265, 106.802469],
+      destinationAddress: '',
+      destinationPosition: null
+    }
+  },
+  changeOrigin(address, position) {
+    this.setState({originAddress: address})
+    this.setState({originPosition: position})
+  },
+  changeDestination(address, position) {
+    this.setState({destinationAddress: address})
+    this.setState({destinationPosition: position})
+  },
   render() {
     return (
       <div style={{
@@ -22,11 +38,16 @@ export default React.createClass({
             zIndex: 999
           }}>
           <Card>
-            <MaterialSearchBar floatingLabelText="Your Pickup Location"/>
-            <MaterialSearchBar floatingLabelText="Your Destination"/>
+            <MaterialSearchBar floatingLabelText="Your Origin"
+              onChange={this.changeOrigin}/>
+            <MaterialSearchBar floatingLabelText="Your Destination"
+              onChange={this.changeDestination}/>
           </Card>
         </div>
-        <GocengMap/>
+        <GocengMap 
+          originPosition={this.state.originPosition}
+          destinationPosition={this.state.destinationPosition}
+        />
         <div style={{
             position: 'absolute',
             width: '96%',

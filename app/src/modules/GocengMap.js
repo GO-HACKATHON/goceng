@@ -17,9 +17,6 @@ export default React.createClass({
     return {
       tileLayerUrl: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       tileLayerAttribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      mapCenter: [-6.244265, 106.802469],
-      markerPosition: [-6.244265, 106.802469],
-      endMarkerPosition: [-6.244265, 106.802469],
       polylines: []
     }
   },
@@ -78,28 +75,37 @@ export default React.createClass({
   render() {
     var self = this
     var polylines = [];
+    var key = 0;
     this.state.polylines.forEach(function(polyline){
       polylines.push(
         <Polyline 
           positions={polyline.points}
           color={self.calcColor(polyline.jam_meter)}
           weight={10}
+          key={key++}
         >
         </Polyline>
       )
     })
     
+    var destinationMarker = ""
+    if (this.props.destinationPosition) {
+      destinationMarker = (
+        <Marker 
+          position={this.props.destinationPosition}
+          icon={icon}>
+        </Marker>
+      )
+    }
+    
     return (
-      <Map center={this.state.mapCenter} zoom={15}>
+      <Map center={this.props.originPosition} zoom={15}>
         <TileLayer url={this.state.tileLayerUrl} attribution={this.state.tileLayerAttribution}/>
         <Marker 
-          position={this.state.markerPosition}
+          position={this.props.originPosition}
           icon={icon}>
         </Marker>
-        <Marker 
-          position={this.state.endMarkerPosition}
-          icon={icon}>
-        </Marker>
+        {destinationMarker}
         {polylines}
       </Map>
     )
