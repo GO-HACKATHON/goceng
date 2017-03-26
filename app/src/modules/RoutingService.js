@@ -7,12 +7,14 @@ function _ajax(settings, resolve, reject){
 }
 
 export function getRouting(origin, destination) {
-  console.log("getRouting")
   const time = "2017-03-25 07:10:00"
-  const url = "http://10.17.10.185:5001/v1/multiple_route?origin=" +
+  
+  const url = "http://139.59.101.20:5001/v1/multiple_route?origin=" +
                 origin + "&destination=" + destination + "&timestamp=" +
                 time + "&intersections=1&area=jakarta2"
   
+  console.log("getRouting url: " + url)
+                
   return new Promise(function (resolve, reject) {
     var settings = {
       "url": url,

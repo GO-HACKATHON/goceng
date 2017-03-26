@@ -13,7 +13,8 @@ export default React.createClass({
       originPosition: [-6.244265, 106.802469],
       destinationAddress: '',
       destinationPosition: null,
-      polylines: []
+      polylines: [],
+      sugestions: []
     }
   },
   changeOrigin(address, position) {
@@ -24,6 +25,23 @@ export default React.createClass({
     this.setState({destinationAddress: address})
     this.setState({destinationPosition: position})
   },
+  parsePolylinesFromRoute(route){
+    const steps = route.legs[0].steps
+    
+    var polylines = []
+    steps.forEach(function(step){
+      var points = []
+      step.intersections.forEach(function(intersection){
+        points.push([intersection.lat, intersection.lng])
+      })
+      const polyline = {
+        'points': points,
+        'jam_meter': step.jam_meter
+      }
+      polylines.push(polyline)
+    })
+    return polylines
+  },
   doQuery() {
     const origin = this.state.originAddress
     const destination = this.state.destinationAddress
@@ -31,25 +49,14 @@ export default React.createClass({
     var self = this
     
     RoutingService.getRouting(origin, destination).then((result)=>{
+      console.log(result)
+      self.setState({sugestions: result})
       const route = result[1].routes[0]
-      const steps = route.legs[0].steps
-      
-      var polylines = []
-      steps.forEach(function(step){
-        var points = []
-        step.intersections.forEach(function(intersection){
-          points.push([intersection.lat, intersection.lng])
-        })
-        const polyline = {
-          'points': points,
-          'jam_meter': step.jam_meter
-        }
-        polylines.push(polyline)
-      })
+      const polylines = self.parsePolylinesFromRoute(route)
       self.setState({polylines: polylines})
     });
   },
-  render() {
+  render() { 
     return (
       <div style={{
         position: 'relative',
