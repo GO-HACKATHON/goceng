@@ -6,9 +6,7 @@ function _ajax(settings, resolve, reject){
   });
 }
 
-export function getRouting(origin, destination) {
-  const time = "2017-03-25 07:10:00"
-  
+export function getRouting(origin, destination, time) {
   const url = "http://139.59.101.20:5001/v1/multiple_route?origin=" +
                 origin + "&destination=" + destination + "&timestamp=" +
                 time + "&intersections=1"

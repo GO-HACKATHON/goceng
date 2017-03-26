@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import * as RoutingService from './RoutingService'
 import LoadingPage from './LoadingPage'
 import DetailPage from './DetailPage'
+import moment from 'moment'
 
 export default React.createClass({
   getInitialState() {
@@ -46,6 +47,9 @@ export default React.createClass({
     return polylines
   },
   doQuery() {
+    console.log('doQuery')
+    const time =  moment().format('YYYY-MM-DD HH:00:00')
+    
     this.setState({loading: true})
 
     const origin = this.state.originAddress
@@ -53,7 +57,7 @@ export default React.createClass({
     
     var self = this
     
-    RoutingService.getRouting(origin, destination).then((result)=>{
+    RoutingService.getRouting(origin, destination, time).then((result)=>{
       console.log(result)
       self.setState({sugestions: result})
       const route = result[1].routes[0]
@@ -90,9 +94,11 @@ export default React.createClass({
             <MaterialSearchBar placeholder="Your Destination"
               onChange={this.changeDestination}/>
             <DetailPage style={{
-              overflow: 'auto',
-              height: 400
-            }} />
+                overflow: 'auto',
+                height: 400
+              }}
+              sugestions={this.state.sugestions} 
+            />
           </div>
         </div>
         <GocengMap 

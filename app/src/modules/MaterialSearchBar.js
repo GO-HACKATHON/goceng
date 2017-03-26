@@ -50,7 +50,7 @@ class MaterialSearchBar extends Component {
     const { isScriptLoaded, isScriptLoadSucceed } = this.props
     if (isScriptLoaded && isScriptLoadSucceed) {
       const options = {
-        location: new google.maps.LatLng(-6.244265, 106.802469),
+        location: new google.maps.LatLng(-6.893248, 107.610659),
         radius: 1000
       }
       const cssClasses = {

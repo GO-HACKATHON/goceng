@@ -12,7 +12,7 @@ const DetailItem = ({
             <CardText>
                 <div>
                     <span>Best time to order GoJek</span>
-                    <h1>08.00</h1>
+                    <h1>{1}</h1>
                     <span>29 min</span>
                     <span>4.5 km</span>
                     <span>low traffic</span>
