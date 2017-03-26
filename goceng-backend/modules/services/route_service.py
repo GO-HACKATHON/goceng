@@ -65,13 +65,17 @@ class RouteService(object):
 
   @staticmethod
   def get_multiple_route (origin, destination, timestamp, waypoints=None, area='bandung', intersections=False):
+    pivot_timestamp = datetime_floor_hour(datetime_from_str(timestamp))
     url = RouteService.URL % (origin, destination, Config.GMAPS_API_KEY)
     if waypoints is not None:
       url += ('&waypoints=' + waypoints)
-    raw_result = RouteService.url_get(url)
-    timestamps = get_ranged_timestamps(timestamp)
+    timestamps = get_ranged_timestamps(str(pivot_timestamp))
     result = []
     for timestamp in timestamps:
+      dynamic_timestamp = datetime_from_str(timestamp).replace(day=current_date().day)
+      dynamic_time = dynamic_timestamp.strftime('%s') if dynamic_timestamp.hour > current_date().hour else 'now'
+      dynamic_url = url + ('&departure_time=' + dynamic_time)
+      raw_result = RouteService.url_get(dynamic_url)
       current_events = EventService.get_events_by_area(area=area, timestamp=timestamp)
       total_events = EventService.get_events_by_area(area=area)
       result += [RouteService.preprocess(raw_result, events=current_events, total_events=total_events, intersections=intersections)]
