@@ -65,9 +65,9 @@ export default React.createClass({
             zIndex: 999
           }}>
           <Card>
-            <MaterialSearchBar floatingLabelText="Your Origin"
+            <MaterialSearchBar placeholder="Your Origin"
               onChange={this.changeOrigin}/>
-            <MaterialSearchBar floatingLabelText="Your Destination"
+            <MaterialSearchBar placeholder="Your Destination"
               onChange={this.changeDestination}/>
           </Card>
         </div>
