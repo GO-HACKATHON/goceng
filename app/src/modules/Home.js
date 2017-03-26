@@ -4,6 +4,7 @@ import MaterialSearchBar from './MaterialSearchBar'
 import DetailCard from './DetailCard'
 import {Card} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
+import * as RoutingService from './RoutingService'
 
 export default React.createClass({
   getInitialState() {
@@ -11,7 +12,8 @@ export default React.createClass({
       originAddress: '',
       originPosition: [-6.244265, 106.802469],
       destinationAddress: '',
-      destinationPosition: null
+      destinationPosition: null,
+      polylines: []
     }
   },
   changeOrigin(address, position) {
@@ -21,6 +23,31 @@ export default React.createClass({
   changeDestination(address, position) {
     this.setState({destinationAddress: address})
     this.setState({destinationPosition: position})
+  },
+  doQuery() {
+    const origin = this.state.originAddress
+    const destination = this.state.destinationAddress
+    
+    var self = this
+    
+    RoutingService.getRouting(origin, destination).then((result)=>{
+      const route = result[1].routes[0]
+      const steps = route.legs[0].steps
+      
+      var polylines = []
+      steps.forEach(function(step){
+        var points = []
+        step.intersections.forEach(function(intersection){
+          points.push([intersection.lat, intersection.lng])
+        })
+        const polyline = {
+          'points': points,
+          'jam_meter': step.jam_meter
+        }
+        polylines.push(polyline)
+      })
+      self.setState({polylines: polylines})
+    });
   },
   render() {
     return (
@@ -47,6 +74,7 @@ export default React.createClass({
         <GocengMap 
           originPosition={this.state.originPosition}
           destinationPosition={this.state.destinationPosition}
+          polylines={this.state.polylines}
         />
         <div style={{
             position: 'absolute',
@@ -56,7 +84,8 @@ export default React.createClass({
             marginLeft: '-48%',
             zIndex: 999
           }}>
-          <RaisedButton label="Search" primary={true} fullWidth={true} />
+          <RaisedButton label="Search" primary={true} fullWidth={true} 
+            onClick={this.doQuery}/>
         </div>
       </div>
     )

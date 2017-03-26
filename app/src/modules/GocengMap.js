@@ -16,8 +16,7 @@ export default React.createClass({
   getInitialState() {
     return {
       tileLayerUrl: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      tileLayerAttribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      polylines: []
+      tileLayerAttribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }
   },
   calcColor(meter) {
@@ -41,42 +40,11 @@ export default React.createClass({
     })
     return string.slice(0,-1)
   },
-  componentDidMount(){
-    var self = this
-    
-    RoutingService.getRouting().then((result)=>{
-      const route = result[1].routes[0]
-      const steps = route.legs[0].steps
-      
-      const start_location = steps[0].start_location
-      const start_point = [start_location.lat, start_location.lng]
-      self.setState({mapCenter: start_point})
-      self.setState({markerPosition: start_point})
-      
-      var polylines = []
-      steps.forEach(function(step){
-        var points = []
-        step.intersections.forEach(function(intersection){
-          points.push([intersection.lat, intersection.lng])
-        })
-        const polyline = {
-          'points': points,
-          'jam_meter': step.jam_meter
-        }
-        polylines.push(polyline)
-      })
-      self.setState({polylines: polylines})
-      
-      const end_location = steps[steps.length - 1].end_location
-      const end_point = [end_location.lat, end_location.lng]
-      self.setState({endMarkerPosition: end_point})
-    });
-  },
   render() {
     var self = this
     var polylines = [];
     var key = 0;
-    this.state.polylines.forEach(function(polyline){
+    this.props.polylines.forEach(function(polyline){
       polylines.push(
         <Polyline 
           positions={polyline.points}
